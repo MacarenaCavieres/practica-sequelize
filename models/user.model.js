@@ -1,16 +1,17 @@
-import { Datatypes } from "sequelize";
+import { DataTypes } from "sequelize";
 import { sequelize } from "../database/connection.js";
 
 export const User = sequelize.define("User", {
     firstName: {
-        type: Datatypes.String,
+        type: DataTypes.STRING,
         allowNull: false,
     },
     lastName: {
-        type: Datatypes.String,
+        type: DataTypes.STRING,
     },
     uuid: {
-        type: Datatypes.UUIDV4,
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
         primaryKey: true,
     },
 });
